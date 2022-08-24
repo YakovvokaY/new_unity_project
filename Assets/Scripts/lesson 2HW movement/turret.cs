@@ -7,20 +7,26 @@ public class turret : MonoBehaviour
 {
     [SerializeField] GameObject rocets;
     [SerializeField] Transform spawnPoint;
+    [SerializeField] GameObject light;
     public float spawnpoint = 1f;
     public float angularSpeed;
     [SerializeField] Transform aheadObj;
     private HashSet<GameObject> Obj = new HashSet<GameObject>();
     public Transform player;
-    private float nextSpavnTime;
     private float aheadTime;
     Vector3 dirVect = new Vector3();
     private float bulletSpeed = 6;
+    private bool flagNum = true;
 
     private void Update()
     {
         LookAtPlayer();
-        shoot();
+        if (flagNum == true)
+        {
+            flagNum = false;
+            StartCoroutine(shoot());
+        }
+        
         StartCoroutine(AheadPoint());
     }
     private void LookAtPlayer()
@@ -29,13 +35,15 @@ public class turret : MonoBehaviour
         Vector3 rotation = Vector3.RotateTowards(transform.forward,direction,angularSpeed * Time.deltaTime, 0F);
         transform.rotation = Quaternion.LookRotation(rotation);
     }
-    private void shoot()
+    private IEnumerator shoot()
     {
-        if (Time.time > nextSpavnTime)
-        {
-            Instantiate(rocets, spawnPoint.position, spawnPoint.rotation);
-            nextSpavnTime = Time.time + 2;
-        }
+        yield return new WaitForSeconds(1);
+        light.SetActive(true);
+        Instantiate(rocets, spawnPoint.position, spawnPoint.rotation);
+        yield return new WaitForSeconds(0.3f);
+        light.SetActive(false);
+        flagNum = true;
+        StopCoroutine(shoot());
     }
     private void OnTriggerEnter(Collider other)
     {
