@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scene/lesson2-Hw.unity
     guid: db9abb64df5cbcf47a8bd4bb8bdf5583
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 558c95565f8e0c54981e02fb16ea232a,
+      type: 2}
