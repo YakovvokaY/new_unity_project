@@ -15,6 +15,6 @@ public class UpScale : Cube
     private void Scale (Collider other,float i)
     {
         other.gameObject.transform.localScale = other.gameObject.transform.localScale * i;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

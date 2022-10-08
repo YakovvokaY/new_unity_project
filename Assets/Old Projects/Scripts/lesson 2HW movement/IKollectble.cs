@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deledate : MonoBehaviour
+public interface IKollectble 
 {
-    
+    void AddKey();
 }

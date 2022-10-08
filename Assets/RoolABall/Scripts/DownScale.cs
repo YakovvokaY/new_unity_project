@@ -15,6 +15,6 @@ public class DownScale : Cube
     private void ScaleDown(Collider other, float i)
     {
         other.gameObject.transform.localScale = other.gameObject.transform.localScale * i;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

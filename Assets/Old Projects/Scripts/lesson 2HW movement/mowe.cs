@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mowe : MonoBehaviour
+public class mowe : MonoBehaviour , IKollectble
 {
     public float speed;
     public float Jumpforse;
+    private int keys;
     private Rigidbody rb;
 
     [SerializeField] Transform CamTrans;
@@ -58,5 +59,11 @@ public class mowe : MonoBehaviour
     {
         Vector3 forse = Vector3.up * Jumpforse;
         rb.AddForce(forse, ForceMode.Acceleration);
+    }
+    public void AddKey()
+    {
+        keys++;
+        if (PlayerUI.KeyChanged != null)
+            PlayerUI.KeyChanged.Invoke(keys);
     }
 }
