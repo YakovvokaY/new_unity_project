@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2999006479512178161}
   - component: {fileID: 8596428918640376357}
   - component: {fileID: 2149224412060911353}
+  - component: {fileID: 2805100934510966189}
   m_Layer: 0
   m_Name: Baysic
   m_TagString: Untagged
@@ -170,6 +171,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReloadAncor: {fileID: 2093722172975118252}
+--- !u!114 &2805100934510966189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458285169750850342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2d921560dfe3e4caea6dbe5ccf32c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ico: {fileID: 9058075503943825255, guid: 4528917060112db47ad9a443b8649245, type: 3}
 --- !u!1 &7656072303390768843
 GameObject:
   m_ObjectHideFlags: 0
