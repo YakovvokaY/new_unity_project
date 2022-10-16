@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WASDRotate : MonoBehaviour
 {
+    [Range(10, 60)] public float speedOfRotate = 30;
+
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -32,16 +34,16 @@ public class WASDRotate : MonoBehaviour
         switch (button)
         {
             case 'W':
-                transform.Rotate(new Vector3 (1,0,0) * Time.deltaTime * 30);
+                transform.Rotate(new Vector3 (1,0,0) * Time.deltaTime * speedOfRotate);
                 break;
             case 'S':
-                transform.Rotate(new Vector3(-1, 0, 0) * Time.deltaTime * 30);
+                transform.Rotate(new Vector3(-1, 0, 0) * Time.deltaTime * speedOfRotate);
                 break;
             case 'A':
-                transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * 30);
+                transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime * speedOfRotate);
                 break;
             case 'D':
-                transform.Rotate(new Vector3(0, 0, -1) * Time.deltaTime * 30);
+                transform.Rotate(new Vector3(0, 0, -1) * Time.deltaTime * speedOfRotate);
                 break;
         }
     }
